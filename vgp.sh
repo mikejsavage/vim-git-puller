@@ -8,9 +8,9 @@ mkdir -p ~/.vim/plugins
 cd ~/.vim/plugins
 rtp=""
 
-for plugin in ${plugins[@]}; do
+for plugin in "${plugins[@]}"; do
 	echo "$plugin:"
-	base=$(basename $plugin)
+	base=$(basename "$plugin")
 
 	if [[ ! -d "$base" ]]; then
 		git clone "git://github.com/$plugin.git" 2>&1 | sed "s/^/  /g"
