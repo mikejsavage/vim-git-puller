@@ -13,7 +13,7 @@ for plugin in "${plugins[@]}"; do
 	base=$(basename "$plugin")
 
 	if [[ ! -d "$base" ]]; then
-		git clone "git://github.com/$plugin.git" 2>&1 | sed "s/^/  /g"
+		git clone "https://github.com/$plugin" 2>&1 | sed "s/^/  /g"
 	else
 		git -C "$base" pull 2>&1 | sed "s/^/  /g"
 	fi
